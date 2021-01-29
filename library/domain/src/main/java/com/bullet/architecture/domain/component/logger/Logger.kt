@@ -5,6 +5,8 @@ import com.bullet.architecture.domain.component.logger.configuration.LoggerConfi
 interface Logger {
     fun getConfiguration(): LoggerConfiguration
 
+    fun setConfiguration(configuration: LoggerConfiguration)
+
     fun log(
         level: Level = Level.Debug,
         message: String? = null,
