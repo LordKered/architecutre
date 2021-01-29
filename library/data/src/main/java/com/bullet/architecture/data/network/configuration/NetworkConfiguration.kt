@@ -4,7 +4,7 @@ import com.bullet.architecture.data.network.configuration.convertor.ConverterFac
 import com.bullet.architecture.data.network.configuration.convertor.KotlinConverterFactory
 import com.bullet.architecture.data.network.configuration.interceptor.utils.token.TokenProvider
 
-sealed class Configuration {
+sealed class NetworkConfiguration {
     abstract val server: String
 
     open val timeout: Long = 30L * 1000
@@ -14,7 +14,7 @@ sealed class Configuration {
 
     open val converterFactory: ConverterFactory = KotlinConverterFactory()
 
-    abstract class AuthConfiguration(val tokenProvider: TokenProvider) : Configuration() {
+    abstract class AuthConfiguration(val tokenProvider: TokenProvider) : NetworkConfiguration() {
         override val withAuth: Boolean = true
     }
 }

@@ -1,6 +1,6 @@
 package com.bullet.architecture.data.network.configuration.interceptor.provider
 
-import com.bullet.architecture.data.network.configuration.Configuration
+import com.bullet.architecture.data.network.configuration.NetworkConfiguration
 import com.bullet.architecture.data.network.configuration.interceptor.TokenInterceptor
 import com.bullet.architecture.data.network.configuration.interceptor.UserAgentInterceptor
 import com.bullet.architecture.data.network.configuration.interceptor.utils.InterceptorLogger
@@ -10,7 +10,7 @@ import okhttp3.Interceptor
 import okhttp3.logging.HttpLoggingInterceptor
 
 class DefaultInterceptorProvider(
-    configuration: Configuration,
+    configuration: NetworkConfiguration,
     userAgentProvider: UserAgentProvider,
     logger: Logger
 ) : InterceptorProvider {
@@ -33,7 +33,7 @@ class DefaultInterceptorProvider(
             networkInterceptors.add(loggingInterceptor)
         }
 
-        if (configuration.withAuth && configuration is Configuration.AuthConfiguration) {
+        if (configuration.withAuth && configuration is NetworkConfiguration.AuthConfiguration) {
             interceptors.add(TokenInterceptor(configuration))
         }
 

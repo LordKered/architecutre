@@ -1,10 +1,10 @@
 package com.bullet.architecture.data.network.configuration.interceptor
 
-import com.bullet.architecture.data.network.configuration.Configuration
+import com.bullet.architecture.data.network.configuration.NetworkConfiguration
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class TokenInterceptor(private val configuration: Configuration.AuthConfiguration) :
+class TokenInterceptor(private val configuration: NetworkConfiguration.AuthConfiguration) :
     Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {

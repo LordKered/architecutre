@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
 class NetworkFactory(
-    private val configuration: Configuration,
+    private val configuration: NetworkConfiguration,
     private val interceptor: InterceptorProvider
 ) {
 
@@ -37,7 +37,7 @@ class NetworkFactory(
     companion object {
         fun <S> createService(
             protocol: Class<S>,
-            configuration: Configuration,
+            configuration: NetworkConfiguration,
             interceptors: InterceptorProvider
         ): S {
             return NetworkFactory(
