@@ -38,3 +38,5 @@ val defaultDeviceInfo = module {
 
 val defaultLoggerModule = listOf<Module>(defaultLoggerConfiguration, defaultLogger)
 val defaultDeviceInfoModule = listOf<Module>(defaultDeviceInfo, defaultUserAgent)
+
+val defaultDomainModule = defaultLoggerModule + defaultDeviceInfoModule

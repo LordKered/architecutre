@@ -4,7 +4,6 @@ import com.bullet.architecture.core.ktx.autoNotify
 import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
-@SuppressWarnings(value = ["unused"])
 abstract class BaseDiffRecyclerAdapter<T : Any> : BaseRecyclerAdapter<T>() {
 
     override var items: List<T> by Delegates.observable(emptyList(), ::onItemChange)

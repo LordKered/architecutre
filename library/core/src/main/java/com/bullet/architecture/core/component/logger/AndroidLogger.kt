@@ -7,10 +7,14 @@ import com.bullet.architecture.domain.component.logger.Logger
 import com.bullet.architecture.domain.component.logger.configuration.LoggerConfiguration
 
 class AndroidLogger(
-    private val configuration: LoggerConfiguration = DefaultLoggerConfiguration()
+    private var configuration: LoggerConfiguration = DefaultLoggerConfiguration()
 ) : Logger {
 
-    override fun getConfiguration() = configuration
+    override fun getConfiguration(): LoggerConfiguration = configuration
+
+    override fun setConfiguration(configuration: LoggerConfiguration) {
+        this.configuration = configuration
+    }
 
     override fun log(
         level: Level,
