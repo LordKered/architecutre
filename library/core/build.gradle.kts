@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -64,6 +65,8 @@ dependencies {
     implementation("org.koin:koin-android:2.2.1")
     implementation("org.koin:koin-androidx-viewmodel:2.2.1")
     implementation("org.koin:koin-androidx-ext:2.2.1")
+
+    implementation("com.squareup.picasso:picasso:2.71828")
 
     implementation(project(":domain"))
     implementation(project(":data"))

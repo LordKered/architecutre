@@ -1,4 +1,4 @@
-package com.bullet.architecture.core.ktx
+package com.bullet.architecture.core.ui.view.ktx
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

@@ -9,13 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import com.bullet.architecture.core.component.error.DefaultFailureHandler
 import com.bullet.architecture.core.component.error.ErrorHandler
 import com.bullet.architecture.core.controller.BaseViewModel
 import com.bullet.architecture.core.coroutine.impl.DefaultCoroutineLauncher
 import com.bullet.architecture.core.ktx.getString
-import com.bullet.architecture.domain.component.logger.Level
-import com.bullet.architecture.domain.component.logger.Logger
 import com.bullet.architecture.core.provider.CoroutineProvider
 import com.bullet.architecture.core.provider.RouterProvider
 import com.bullet.architecture.core.router.NavComponentRouter
@@ -24,6 +21,8 @@ import com.bullet.architecture.core.router.command.Command
 import com.bullet.architecture.core.router.command.NavDirection
 import com.bullet.architecture.core.ui.view.BaseView
 import com.bullet.architecture.core.ui.view.model.TextProvider
+import com.bullet.architecture.domain.component.logger.Level
+import com.bullet.architecture.domain.component.logger.Logger
 import com.bullet.architecture.domain.entities.failure.Failure
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
@@ -39,7 +38,7 @@ abstract class BaseActivity<T : ViewDataBinding>(
 
     private val logger: Logger by inject { parametersOf(this) }
 
-    protected open val failureHandler: ErrorHandler by lazy { DefaultFailureHandler(logger) }
+    protected open val failureHandler: ErrorHandler by inject()
 
     override val router: Router by lazy {
         NavComponentRouter(

@@ -1,6 +1,6 @@
 package com.bullet.architecture.core.ui.recycler
 
-import com.bullet.architecture.core.ktx.autoNotify
+import com.bullet.architecture.core.ui.view.ktx.autoNotify
 import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
