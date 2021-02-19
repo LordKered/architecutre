@@ -1,3 +1,4 @@
+include(":demo-domain")
 include(":demo")
 
 include(":data")
@@ -5,6 +6,7 @@ include(":domain")
 include(":core")
 
 project(":demo").projectDir = File(rootDir, "demos/main")
+project(":demo-domain").projectDir = File(rootDir, "demos/main-domain")
 
 project(":core").projectDir = File(rootDir, "library/core")
 project(":domain").projectDir = File(rootDir, "library/domain")
