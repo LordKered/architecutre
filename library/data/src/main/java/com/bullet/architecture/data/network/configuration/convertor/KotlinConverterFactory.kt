@@ -7,7 +7,7 @@ import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Converter
 
-class KotlinConverterFactory : ConverterFactory {
+class KotlinConverterFactory : ConverterFactoryProvider {
 
     private val contentType: MediaType by lazy { "application/json".toMediaType() }
     private val jsonConfiguration: Json by lazy { Json { ignoreUnknownKeys = true } }

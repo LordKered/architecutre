@@ -17,7 +17,7 @@ class NetworkFactory(
     private val retrofit: Retrofit
         get() = Retrofit.Builder()
             .baseUrl(configuration.server)
-            .addConverterFactory(configuration.converterFactory.converterFactory)
+            .addConverterFactory(configuration.converterFactoryProvider.converterFactory)
             .client(okHttpClient)
             .build()
 

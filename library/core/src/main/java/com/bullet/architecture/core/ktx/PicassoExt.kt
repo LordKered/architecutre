@@ -13,6 +13,7 @@ fun ImageView.loadImage(
 ) = Picasso
     .get()
     .load(url)
+    .fit()
     .extras()
     .into(this)
 
@@ -22,6 +23,7 @@ fun ImageView.loadImage(
 ) = Picasso
     .get()
     .load(uri)
+    .fit()
     .extras()
     .into(this)
 
@@ -31,6 +33,7 @@ fun ImageView.loadImage(
 ) = Picasso
     .get()
     .load(file)
+    .fit()
     .extras()
     .into(this)
 
@@ -40,5 +43,6 @@ fun ImageView.loadImage(
 ) = Picasso
     .get()
     .load(resourceId)
+    .fit()
     .extras()
     .into(this)

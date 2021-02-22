@@ -11,6 +11,7 @@ fun ImageView.setImage(iconProvider: IconProvider?) {
         is IconProvider.Drawable -> setImageDrawable(iconProvider.icon)
         is IconProvider.Url -> loadImage(iconProvider.url)
         is IconProvider.ResIcon -> loadImage(iconProvider.icon)
+        is IconProvider.ResVectorIcon -> setImageResource(iconProvider.icon)
         else -> setImageDrawable(null)
     }
 }
